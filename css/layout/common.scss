@@ -1,3 +1,37 @@
-.button {
+.btn {
+  width: 347px;
+  height: 61px;
+  border-radius: 48px;
+  background-color: #ffd452;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $textLight;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
+.btn2{
+  width: 231px;
+  height: 47px;
+  box-shadow: 0 0 20px $btn;
+  border-radius: 100px;
+  border: 2px solid $btn;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  color: $btn;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.c{
+  &-purple{
+    color: #823ef4;
+  }
 }

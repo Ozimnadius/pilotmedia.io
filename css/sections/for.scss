@@ -1,0 +1,83 @@
+.for {
+  padding-top: 135px;
+  padding-bottom: 110px;
+
+  &__title {
+    font-size: 46px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 80px 20px;
+  }
+
+}
+
+.fitem {
+
+  &:hover {
+    img {
+      animation-name: swing;
+      animation-duration: 0.8s;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+    }
+  }
+
+  &__top {
+    position: relative;
+    margin-bottom: 15px;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-top: calc(360 / 380 * 100%);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+
+  }
+
+  &__title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+
+}
+
+
+@keyframes swing{
+  20% {
+    transform: rotate(15deg)
+  }
+
+  40% {
+    transform: rotate(-10deg)
+  }
+
+  60% {
+    transform: rotate(5deg)
+  }
+
+  80% {
+    transform: rotate(-5deg)
+  }
+
+  to {
+    transform: rotate(0deg)
+  }
+}

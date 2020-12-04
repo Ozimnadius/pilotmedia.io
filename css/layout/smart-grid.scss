@@ -1,16 +1,16 @@
 $columns: 24;
 $atom: (100% / $columns);
 
-$break_lg: 1199.99px;
-$break_md: 991.99px;
-$break_sm: 767.99px;
-$break_xs: 575.99px;
+$break_lg: 1199.98px;
+$break_md: 991.98px;
+$break_sm: 767.98px;
+$break_xs: 575.98px;
 
 $offset: 20px;
 $offset_lg: $offset;
 $offset_md: $offset;
-$offset_sm: 10px;
-$offset_xs: 10px;
+$offset_sm: $offset;
+$offset_xs: $offset;
 
 $offset_one_side: ($offset / 2);
 $offset_lg_one_side: ($offset_lg / 2);
@@ -18,7 +18,7 @@ $offset_md_one_side: ($offset_md / 2);
 $offset_sm_one_side: ($offset_sm / 2);
 $offset_xs_one_side: ($offset_xs / 2);
 
-$fields: 20px;
+$fields: 10px;
 $fields_lg: 20px;
 $fields_md: 20px;
 $fields_sm: 10px;
@@ -52,31 +52,11 @@ $fields_xs: 10px;
 @mixin row-offsets(){
     margin-left: ($offset_one_side * -1);
     margin-right: ($offset_one_side * -1);
-
-    @include sm-block(){
-        margin-left: ($offset_sm_one_side * -1);
-        margin-right: ($offset_sm_one_side * -1);
-    }
-
-    @include xs-block(){
-        margin-left: ($offset_xs_one_side * -1);
-        margin-right: ($offset_xs_one_side * -1);
-    }
 }
 
 @mixin col-offsets($type){
     #{$type}-left: $offset_one_side;
     #{$type}-right: $offset_one_side;
-
-    @include sm-block(){
-        #{$type}-left: $offset_sm_one_side;
-        #{$type}-right: $offset_sm_one_side;
-    }
-
-    @include xs-block(){
-        #{$type}-left: $offset_xs_one_side;
-        #{$type}-right: $offset_xs_one_side;
-    }
 }
 
 @mixin wrapper(){
@@ -454,8 +434,6 @@ $fields_xs: 10px;
             > div{
                 @include col();
                 @include size(1);
-                @include size-sm(1);
-                @include size-xs(1);
                 height: inherit;
                 outline: $outline;
                 background: $background;

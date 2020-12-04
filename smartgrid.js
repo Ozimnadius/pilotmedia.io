@@ -7,7 +7,7 @@ smartgrid('./css/layout', {
     outputStyle: "scss",
     container: {
         maxWidth: "1200px",
-        fields: "20px",
+        fields: "10px",
     },
     breakPoints: {
         lg: {
@@ -21,12 +21,10 @@ smartgrid('./css/layout', {
         sm: {
             width: "767.98px",
             fields: "10px",
-            offset: "10px",
         },
         xs: {
             width: "575.98px",
             fields: "10px",
-            offset: "10px",
         }
     },
 });

@@ -12,6 +12,7 @@ html {
   font-size: $font-size;
   line-height: 1.42;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 ;
 }
 
@@ -34,7 +35,6 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  scroll-behavior: smooth;
 }
 
 

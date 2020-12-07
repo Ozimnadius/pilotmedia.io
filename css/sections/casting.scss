@@ -1,0 +1,57 @@
+.casting{
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  &__wrap{
+    background: linear-gradient(95.94deg, #621287 0%, #2C124E 100%);
+    border-radius: 30px;
+  }
+
+  &__grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    align-items: center;
+  }
+
+  &__left{
+    padding-top: 40px;
+    align-self: flex-end;
+  }
+
+  &__img{
+    margin-left: -50px;
+    img{
+      display: block;
+    }
+  }
+
+  &__right{
+    padding: 85px 0;
+  }
+
+  &__title{
+    color: $bg;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 116.5%;
+    margin-bottom: 20px;
+    max-width: 540px;
+  }
+
+  &__txt{
+    color: $bg;
+    font-size: 18px;
+    margin-bottom: 35px;
+    max-width: 447px;
+  }
+
+  &__btn{
+    width: 281px;
+    height: 54px;
+
+  }
+
+
+}

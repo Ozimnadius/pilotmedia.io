@@ -8,6 +8,7 @@ $btn: #ffd452;
 $bg: #ffffff;
 $black: #000000;
 $textLight: #371551;
+$org: #F2994A;
 
 //another
 $font-size: 16px;
@@ -29,6 +30,11 @@ $font-size: 16px;
 @import "sections/courses";
 @import "sections/diplom";
 @import "sections/specs";
+@import "sections/teachs";
+@import "sections/port";
+@import "sections/casting";
+@import "sections/revs";
+@import "sections/popup";
 @import "sections/footer";
 
 

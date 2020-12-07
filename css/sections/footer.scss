@@ -1,2 +1,105 @@
 .footer {
+
+  &__top{
+    background: #2c124e url("/images/content/footer/bg.png") center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  &__wrap{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 90px;
+    padding-bottom: 45px;
+  }
+
+  &__hand{
+    position: absolute;
+    bottom: -40px;
+
+    &_left{
+      left: 0;
+    }
+
+    &_right{
+      right: -15px;
+    }
+
+    img{
+      display: block;
+    }
+
+  }
+
+  &__big{
+    color: $bg;
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 35px;
+  }
+
+  &__btn{
+    width: 232px;
+    height: 54px;
+    margin-bottom: 30px;
+  }
+
+  &__tel{
+    color: $bg;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 45px;
+    @include tr;
+
+    &:hover{
+      color: $btn;
+    }
+  }
+
+  &__socials{
+    margin-bottom: 40px;
+  }
+
+  &__policy{
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    font-weight: 500;
+    @include tr;
+    &:hover{
+      color: $btn;
+    }
+  }
+
+  &__bottom{
+    background-color: #1b0933;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  &__copy{
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 40px;
+  }
+
+  &__vendor{
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    font-weight: 500;
+    @include tr;
+
+    &:hover{
+      color: $btn;
+    }
+
+    img{
+      margin-left: 5px;
+    }
+  }
+
 }

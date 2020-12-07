@@ -92,39 +92,6 @@ function Player(parent, settings) {
         player.setProgress();
     };
 
-    //TODO Нет возвожности делегирования timeupdate,
-    // поэтому делегирование пошло по бороде,
-    // возможно есть способ надо поискать получше
-    /*document.querySelector('body').addEventListener('click', function (e) {
-        let target = e.target;
-
-        if (target.closest(settings.pause) == player.pauseBtn){
-            player.pause();
-        }
-
-        if (target.closest(settings.play) == player.playBtn){
-            player.play();
-        }
-
-        if (target.closest(settings.scale) == player.scale) {
-            let elem = target.closest(settings.scale);
-            player.audio.currentTime = player.total * (e.layerX / elem.offsetWidth);
-        }
-
-
-    });
-    document.addEventListener('timeupdate', function (e) {
-        let target = e.target;
-
-        console.log(e);
-
-        if (target.closest(settings.audio) == player.audio) {
-            player.update();
-        }
-
-    });*/
-
-
     this.audio.addEventListener('timeupdate', player.update);
 
     this.playBtn.addEventListener('click', player.play);

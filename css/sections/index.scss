@@ -1,9 +1,15 @@
 .index{
+  padding-bottom: 130px;
+
   &__slider{
     transform: translateY(-68px);
   }
 
   &__plan{
     margin-top: -136px;
+  }
+
+  &__casting{
+    margin-bottom: 130px;
   }
 }

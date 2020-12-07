@@ -11,4 +11,7 @@ mixin image(imagePath, imageClass, imageAlt)
     - var alt = 'lorem'
   else
     - var alt = imageAlt
-  img(src=`${imagePath}`, alt=`${alt}`, class=`${imageClass}`)
+  if !imageClass
+    img(src=`${imagePath}`, alt=`${alt}`)
+  else
+    img(src=`${imagePath}`, alt=`${alt}`, class=`${imageClass}`)

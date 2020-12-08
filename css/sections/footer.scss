@@ -15,16 +15,24 @@
     padding-bottom: 45px;
   }
 
-  &__hand{
+  &__hands{
     position: absolute;
     bottom: -40px;
+    left: 0;
+    right: -15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__hand{
 
     &_left{
       left: 0;
     }
 
     &_right{
-      right: -15px;
+      right: 0!important;
+      left: initial!important;
     }
 
     img{

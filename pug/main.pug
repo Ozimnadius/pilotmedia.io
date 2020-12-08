@@ -26,6 +26,12 @@ html(lang="ru")
             //- header
             header.header.jsAddAnimate
                 .container
+                    button(type='button').header__btn-menu
+                        <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="28" height="3" fill="white"/>
+                        <rect y="7" width="20" height="3" fill="white"/>
+                        <rect y="14" width="12" height="3" fill="white"/>
+                        </svg>
                     a(href='/').header__logo
                         <svg width="135" height="62" viewBox="0 0 135 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M40.1354 20.1702H38.5511H33.5342V13.4848C33.5342 6.02216 27.3027 -0.0412682 19.698 0.476974C12.9912 0.943391 7.65742 6.48858 7.65742 13.1739V20.1702H2.64049H1.0562C0.475288 20.1702 0 20.6366 0 21.2066V22.7614V28.9803C0 39.7597 8.6608 48.6216 19.5396 49.1399V58.4682H11.6182C10.8788 58.4682 10.2979 59.0383 10.2979 59.7638C10.2979 60.4894 10.8788 61.0594 11.6182 61.0594H29.5735C30.3128 61.0594 30.8937 60.4894 30.8937 59.7638C30.8937 59.0383 30.3128 58.4682 29.5735 58.4682H22.1801V49.1399C32.7949 48.3107 41.1916 39.6042 41.1916 28.9803V22.7614V21.2066C41.1916 20.6366 40.7163 20.1702 40.1354 20.1702ZM19.5396 46.5487C10.1395 46.0304 2.64049 38.3605 2.64049 28.9803V22.7614H7.60461V29.7576C7.60461 36.3911 12.8328 41.8845 19.4868 42.4027V46.5487H19.5396ZM20.9655 39.8633C15.1036 40.0706 10.2979 35.4583 10.2979 29.7576V22.7614V20.1702V13.1739C10.2979 7.47324 15.1036 2.86089 20.9655 3.06818C25.2431 3.22366 28.7813 6.02216 30.2072 9.80533H21.388C20.6486 9.80533 20.0677 10.3754 20.0677 11.1009C20.0677 11.8265 20.6486 12.3965 21.388 12.3965H30.8409C30.8937 12.7593 30.8937 13.0703 30.8937 13.433V16.5425H21.388C20.6486 16.5425 20.0677 17.1125 20.0677 17.8381C20.0677 18.5636 20.6486 19.1337 21.388 19.1337H30.8937V20.1702V22.7614H21.388C20.6486 22.7614 20.0677 23.3314 20.0677 24.057C20.0677 24.7825 20.6486 25.3526 21.388 25.3526H30.8937V29.4985H21.388C20.6486 29.4985 20.0677 30.0686 20.0677 30.7941C20.0677 31.5197 20.6486 32.0897 21.388 32.0897H30.5241C29.415 36.3911 25.6656 39.7079 20.9655 39.8633ZM38.5511 28.9803C38.5511 38.1532 31.369 45.7195 22.1801 46.5487V42.4027C28.5701 41.5736 33.5342 36.2357 33.5342 29.7576V22.7614H38.5511V28.9803Z" fill="white"/>
@@ -47,7 +53,7 @@ html(lang="ru")
                         a(href='#portfolio').header__item Портфолио
                         a(href='#contacts').header__item Контакты
                     a(href='tel:88004444656').header__tel 8 800 444 46 56
-                    button(type='button' data-template='.template' data-content='.callorder').btn2.header__btn.jsOpenTemplate Заказать звонок
+                    button(type='button' data-template='.template' data-content='.callorder' data-validate='true').btn2.header__btn.jsOpenTemplate Заказать звонок
             //- pages
             .page
                 block content
@@ -57,10 +63,11 @@ html(lang="ru")
                 .footer__top
                     .container
                         .footer__wrap
-                            .footer__hand.footer__hand_left
-                                +image('images/content/footer/hand-left.png')
-                            .footer__hand.footer__hand_right
-                                +image('images/content/footer/hand-right.png')
+                            .footer__hands
+                                div(data-depth-x="0.80" data-depth-y="-0.80").footer__hand.footer__hand_left
+                                    +image('images/content/footer/hand-left.png')
+                                div(data-depth-x="-0.40" data-depth-y="0.40").footer__hand.footer__hand_right
+                                    +image('images/content/footer/hand-right.png')
                             a(href='/').footer__logo
                                 <svg width="182" height="82" viewBox="0 0 182 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M54.3589 26.7085H52.2316H45.4953V17.732C45.4953 7.71175 37.1281 -0.429714 26.9173 0.266138C17.9119 0.892404 10.7501 8.33802 10.7501 17.3145V26.7085H4.01381H1.88656C1.10656 26.7085 0.468384 27.3348 0.468384 28.1002V30.1878V38.538C0.468384 53.0117 12.0974 64.9108 26.7046 65.6066V78.132H16.0683C15.0755 78.132 14.2956 78.8974 14.2956 79.8716C14.2956 80.8458 15.0755 81.6112 16.0683 81.6112H40.1772C41.1699 81.6112 41.9499 80.8458 41.9499 79.8716C41.9499 78.8974 41.1699 78.132 40.1772 78.132H30.25V65.6066C44.5026 64.4933 55.7771 52.8029 55.7771 38.538V30.1878V28.1002C55.7771 27.3348 55.1389 26.7085 54.3589 26.7085ZM26.7046 62.1274C14.0828 61.4315 4.01381 51.1329 4.01381 38.538V30.1878H10.6792V39.5818C10.6792 48.4887 17.6992 55.8647 26.6336 56.5605V62.1274H26.7046ZM28.6191 53.1509C20.7482 53.4292 14.2956 47.2361 14.2956 39.5818V30.1878V26.7085V17.3145C14.2956 9.66014 20.7482 3.46706 28.6191 3.7454C34.3627 3.95415 39.1136 7.71175 41.0281 12.7915H29.1864C28.1936 12.7915 27.4136 13.5569 27.4136 14.5311C27.4136 15.5053 28.1936 16.2707 29.1864 16.2707H41.879C41.9499 16.7578 41.9499 17.1753 41.9499 17.6624V21.8375H29.1864C28.1936 21.8375 27.4136 22.603 27.4136 23.5772C27.4136 24.5514 28.1936 25.3168 29.1864 25.3168H41.9499V26.7085V30.1878H29.1864C28.1936 30.1878 27.4136 30.9532 27.4136 31.9274C27.4136 32.9016 28.1936 33.667 29.1864 33.667H41.9499V39.2338H29.1864C28.1936 39.2338 27.4136 39.9993 27.4136 40.9735C27.4136 41.9477 28.1936 42.7131 29.1864 42.7131H41.4535C39.9645 48.4887 34.9299 52.9421 28.6191 53.1509ZM52.2316 38.538C52.2316 50.8546 42.5881 61.014 30.25 62.1274V56.5605C38.8299 55.4472 45.4953 48.2799 45.4953 39.5818V30.1878H52.2316V38.538Z" fill="white"/>
@@ -77,7 +84,7 @@ html(lang="ru")
                                 <path d="M157.949 58.61L157.027 55.8266H150.787L149.865 58.61H146.532L152.063 43.1621H155.892L161.423 58.61H157.949ZM151.78 53.0432H156.105L153.978 46.711L151.78 53.0432Z" fill="white"/>
                                 </svg>
                             .footer__big Ждем вас на занятиях
-                            button(type='button').btn2.footer__btn Заказать звонок
+                            button(type='button' data-template='.template' data-content='.callorder' data-validate='true').btn2.footer__btn.jsOpenTemplate Заказать звонок
                             a(href='tel:88004444656').footer__tel 8 800 444 46 56
                             .footer__socials
                                 .socials
@@ -136,32 +143,161 @@ html(lang="ru")
 
 
 
+        //.popup.active
+        //    .popup__wrap
+        //        button(type='button').popup__close
+        //            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.43934 0.43934C-0.146447 1.02513 -0.146447 1.97487 0.43934 2.56066L15.4393 17.5607C16.0251 18.1464 16.9749 18.1464 17.5607 17.5607C18.1464 16.9749 18.1464 16.0251 17.5607 15.4393L2.56066 0.43934C1.97487 -0.146447 1.02513 -0.146447 0.43934 0.43934Z" fill="#DADADA"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M17.5607 0.43934C18.1464 1.02513 18.1464 1.97487 17.5607 2.56066L2.56066 17.5607C1.97487 18.1464 1.02513 18.1464 0.43934 17.5607C-0.146446 16.9749 -0.146446 16.0251 0.43934 15.4393L15.4393 0.43934C16.0251 -0.146447 16.9749 -0.146447 17.5607 0.43934Z" fill="#DADADA"></path>
+        //            </svg>
+        //        .popup__form
+
         template.template
-            form(action='ajax.php' method='post').callorder
+            form(action='ajax.php' method='post').callorder.form
                 h2.form__title Заказать звонок
                 .form__sub Оставьте свои данные и наши специалисты свяжются с вами в ближайшее время
                 .form__error Заполните пожалуйста обязательные поля
                 .form__fields
                     .form__field
-                        input(type='text' name='name' placeholder='Как Вас зовут?').input
+                        input(type='text' name='name' placeholder='Как Вас зовут?' data-rule-required="true" data-msg-required="Введите Имя").input
                     .form__field
-                        input(type='tel' name='tel' placeholder='+7 (___) ___-__-__').input
+                        input(type='tel' name='tel' placeholder='+7 (___) ___-__-__' data-rule-required="true" data-msg-required="Введите телефон").input
                     .form__field
-                        input(type='email' name='email' placeholder='Эл. почта').input
+                        input(type='email' name='email' placeholder='Эл. почта' data-rule-required="true" data-msg-required="Введите email").input
                 .form__accept
                     label.accept
-                        input(type='checkbox' checked=true).accept__input
-                        .accept__fake
-                            .accept__checkbox
+                        input(type='checkbox' name='policy' checked=true).accept__input
+                        span.accept__fake
+                            span.accept__checkbox
                                 <svg viewBox="0 0 512 512">
                                 <path d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0 c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7 C514.5,101.703,514.499,85.494,504.502,75.496z"/>
                                 </svg>
-                            .accept__txt Я согласен (а) с политикой конфиденциальности
+                            span.accept__txt Я согласен (а) с политикой конфиденциальности
 
 
 
 
                 button(type='submit').btn.form__submit Отправить
+                input(type='hidden' name='action' value='callorder')
+            form(action='ajax.php' method='post').signup.form
+                h2.form__title Записаться на кастинг
+                .form__sub Оставьте свои данные и наши специалисты свяжются с вами в ближайшее время
+                .form__error Заполните пожалуйста обязательные поля
+                .form__fields
+                    .form__field
+                        input(type='text' name='name' placeholder='Как Вас зовут?' data-rule-required="true" data-msg-required="Введите Имя").input
+                    .form__field
+                        input(type='tel' name='tel' placeholder='+7 (___) ___-__-__' data-rule-required="true" data-msg-required="Введите телефон").input
+                    .form__field
+                        input(type='email' name='email' placeholder='Эл. почта' data-rule-required="true" data-msg-required="Введите email").input
+                    .form__field
+                        input(type='text' name='age' placeholder='Ваш возраст').input
+                .form__accept
+                    label.accept
+                        input(type='checkbox' name='policy' checked=true).accept__input
+                        span.accept__fake
+                            span.accept__checkbox
+                                <svg viewBox="0 0 512 512">
+                                <path d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0 c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7 C514.5,101.703,514.499,85.494,504.502,75.496z"/>
+                                </svg>
+                            span.accept__txt Я согласен (а) с политикой конфиденциальности
+
+
+
+
+                button(type='submit').btn.form__submit Отправить
+                input(type='hidden' name='action' value='callorder')
+            form(action='ajax.php' method='post').getinto.form
+                h2.form__title Попасть в базу данных
+                .form__sub Оставьте свои данные и наши специалисты свяжются с вами в ближайшее время
+                .form__error Заполните пожалуйста обязательные поля
+                .form__fields
+                    .form__field
+                        input(type='text' name='name' placeholder='Как Вас зовут?' data-rule-required="true" data-msg-required="Введите Имя").input
+                    .form__field
+                        input(type='tel' name='tel' placeholder='+7 (___) ___-__-__' data-rule-required="true" data-msg-required="Введите телефон").input
+                    .form__field
+                        input(type='email' name='email' placeholder='Эл. почта' data-rule-required="true" data-msg-required="Введите email").input
+                .form__accept
+                    label.accept
+                        input(type='checkbox' name='policy' checked=true).accept__input
+                        span.accept__fake
+                            span.accept__checkbox
+                                <svg viewBox="0 0 512 512">
+                                <path d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0 c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7 C514.5,101.703,514.499,85.494,504.502,75.496z"/>
+                                </svg>
+                            span.accept__txt Я согласен (а) с политикой конфиденциальности
+
+
+
+
+                button(type='submit').btn.form__submit Отправить
+                input(type='hidden' name='action' value='callorder')
+            .form__success.success
+                .success__svg.
+                    <svg width="228" height="228" viewBox="0 0 228 228" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="114" cy="114" r="113.5" stroke="#8BA3C3" stroke-dasharray="5 5"/>
+                    <circle cx="114" cy="114" r="83.1" stroke="#8BA3C3" stroke-dasharray="5 5"/>
+                    <path d="M151.868 56.8377C151.168 56.4382 150.307 56.4449 149.613 56.8552L108.483 81.1767C107.416 81.8076 107.063 83.1839 107.694 84.2509C108.324 85.3176 109.701 85.6711 110.768 85.0405L140.278 67.5903L85.3107 124.624L57.9718 116.26L93.6503 95.1623C94.7173 94.5312 95.0708 93.1549 94.4399 92.0879C93.8092 91.0212 92.4327 90.6672 91.3657 91.2984L51.3075 114.986C50.5421 115.438 50.1159 116.3 50.2212 117.183C50.3264 118.066 50.943 118.804 51.7931 119.064L84.4425 129.053L98.8466 155.27C98.8616 155.298 98.8771 155.321 98.893 155.341C99.1334 155.742 99.4936 156.069 99.943 156.258C100.224 156.377 100.52 156.434 100.813 156.434C101.389 156.434 101.955 156.213 102.382 155.795L118.945 139.608L150.099 149.139C150.314 149.205 150.535 149.237 150.755 149.237C151.23 149.237 151.699 149.087 152.09 148.797C152.662 148.374 153 147.705 153 146.993V58.7872C153 57.9812 152.568 57.237 151.868 56.8377ZM98.9689 130.436C98.709 130.811 98.5696 131.257 98.5696 131.714V145.443L88.7339 127.541L132.258 82.3806L98.9689 130.436ZM103.058 148.858V134.748L114.054 138.112L103.058 148.858ZM148.511 143.959L104.408 130.467L148.511 66.8007V143.959Z" fill="url(#paint0_linear)"/>
+                    <path d="M74.989 134.554C74.1124 133.677 72.6916 133.677 71.8147 134.554L50.8626 155.506C49.9861 156.382 49.9861 157.804 50.8626 158.68C51.3012 159.118 51.8755 159.337 52.4499 159.337C53.0242 159.337 53.5985 159.118 54.0369 158.68L74.989 137.728C75.8655 136.852 75.8655 135.43 74.989 134.554Z" fill="url(#paint1_linear)"/>
+                    <path d="M47.0792 162.463C46.2025 161.587 44.7818 161.587 43.9051 162.464L38.743 167.626C37.8665 168.502 37.8665 169.923 38.743 170.8C39.1813 171.238 39.7557 171.457 40.33 171.457C40.9043 171.457 41.4787 171.238 41.917 170.8L47.0792 165.638C47.9556 164.761 47.9556 163.34 47.0792 162.463Z" fill="url(#paint2_linear)"/>
+                    <path d="M70.1021 167.494C69.6848 167.076 69.1058 166.836 68.5155 166.836C67.9227 166.836 67.3461 167.076 66.9287 167.494C66.5112 167.911 66.2711 168.488 66.2711 169.08C66.2711 169.671 66.511 170.25 66.9287 170.667C67.3461 171.085 67.9252 171.325 68.5155 171.325C69.1058 171.325 69.6848 171.085 70.1021 170.667C70.5195 170.25 70.7599 169.671 70.7599 169.08C70.7599 168.488 70.5197 167.911 70.1021 167.494Z" fill="url(#paint3_linear)"/>
+                    <path d="M86.801 150.794C85.925 149.918 84.5043 149.918 83.6269 150.794L72.5292 161.892C71.6527 162.768 71.6527 164.189 72.5292 165.066C72.9675 165.504 73.5418 165.723 74.1162 165.723C74.6905 165.723 75.2649 165.504 75.7032 165.066L86.801 153.968C87.6774 153.092 87.6774 151.671 86.801 150.794Z" fill="url(#paint4_linear)"/>
+                    <path d="M125.103 149.942C124.226 149.066 122.805 149.066 121.929 149.942L110.801 161.07C109.924 161.946 109.924 163.368 110.801 164.244C111.239 164.682 111.813 164.902 112.388 164.902C112.962 164.902 113.536 164.682 113.975 164.244L125.103 153.116C125.979 152.24 125.979 150.819 125.103 149.942Z" fill="url(#paint5_linear)"/>
+                    <path d="M101.715 87.1366C101.297 86.7192 100.718 86.479 100.128 86.479C99.5379 86.479 98.9588 86.7192 98.5413 87.1366C98.1241 87.5541 97.8837 88.1331 97.8837 88.7257C97.8837 89.316 98.1239 89.8928 98.5413 90.3102C98.9588 90.7299 99.5379 90.9678 100.128 90.9678C100.718 90.9678 101.297 90.7299 101.715 90.3102C102.132 89.8928 102.373 89.316 102.373 88.7257C102.373 88.1331 102.132 87.5541 101.715 87.1366Z" fill="url(#paint6_linear)"/>
+                    <defs>
+                    <linearGradient id="paint0_linear" x1="77.0012" y1="70.5322" x2="148.353" y2="181.16" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF648D"/>
+                    <stop offset="0.2947" stop-color="#C5479C"/>
+                    <stop offset="0.6252" stop-color="#8B29AA"/>
+                    <stop offset="0.87" stop-color="#6716B4"/>
+                    <stop offset="1" stop-color="#590FB7"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear" x1="56.8371" y1="137.459" x2="75.219" y2="165.155" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF648D"/>
+                    <stop offset="0.2947" stop-color="#C5479C"/>
+                    <stop offset="0.6252" stop-color="#8B29AA"/>
+                    <stop offset="0.87" stop-color="#6716B4"/>
+                    <stop offset="1" stop-color="#590FB7"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear" x1="40.6014" y1="163.158" x2="47.5744" y2="173.664" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF648D"/>
+                    <stop offset="0.2947" stop-color="#C5479C"/>
+                    <stop offset="0.6252" stop-color="#8B29AA"/>
+                    <stop offset="0.87" stop-color="#6716B4"/>
+                    <stop offset="1" stop-color="#590FB7"/>
+                    </linearGradient>
+                    <linearGradient id="paint3_linear" x1="67.4412" y1="167.465" x2="70.6845" y2="172.351" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF648D"/>
+                    <stop offset="0.2947" stop-color="#C5479C"/>
+                    <stop offset="0.6252" stop-color="#8B29AA"/>
+                    <stop offset="0.87" stop-color="#6716B4"/>
+                    <stop offset="1" stop-color="#590FB7"/>
+                    </linearGradient>
+                    <linearGradient id="paint4_linear" x1="75.9348" y1="152.32" x2="87.1964" y2="169.287" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF648D"/>
+                    <stop offset="0.2947" stop-color="#C5479C"/>
+                    <stop offset="0.6252" stop-color="#8B29AA"/>
+                    <stop offset="0.87" stop-color="#6716B4"/>
+                    <stop offset="1" stop-color="#590FB7"/>
+                    </linearGradient>
+                    <linearGradient id="paint5_linear" x1="114.214" y1="151.472" x2="125.498" y2="168.473" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF648D"/>
+                    <stop offset="0.2947" stop-color="#C5479C"/>
+                    <stop offset="0.6252" stop-color="#8B29AA"/>
+                    <stop offset="0.87" stop-color="#6716B4"/>
+                    <stop offset="1" stop-color="#590FB7"/>
+                    </linearGradient>
+                    <linearGradient id="paint6_linear" x1="99.0539" y1="87.1077" x2="102.297" y2="91.9943" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF648D"/>
+                    <stop offset="0.2947" stop-color="#C5479C"/>
+                    <stop offset="0.6252" stop-color="#8B29AA"/>
+                    <stop offset="0.87" stop-color="#6716B4"/>
+                    <stop offset="1" stop-color="#590FB7"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+
+                .success__title Спасибо!
+                .success__txt Ваша заявка принята в работу, наши специалисты свяжутся с Вами в ближайшее время
         script(src='js/vendor.min.js')
         script(src='js/main.min.js')
         // Для изменений после верстки

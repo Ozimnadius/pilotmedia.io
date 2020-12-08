@@ -50,7 +50,21 @@ const jsTools = {
         for (let i = 0; i < elems.length; i++) {
             elems[i].classList.remove(name);
         }
+    },
+    validateTel: function (value) {
+        let re = new RegExp(/\d/g),
+            str = value.match(re);
+
+        if (str.length == 11) {
+            return true;
+        } else {
+            return false;
+        }
     }
+};
+
+$.validator.methods.tel = function (value, element) {
+    return jsTools.validateTel(value);
 };
 
 function Player(parent, settings) {
@@ -123,8 +137,6 @@ function Player(parent, settings) {
         return str;
     }
 
-
     this.setTimeLeft();
-
 
 }

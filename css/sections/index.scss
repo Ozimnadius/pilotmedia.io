@@ -3,10 +3,16 @@
 
   &__slider{
     transform: translateY(-68px);
+    @include lg-block{
+      transform: translateY(0);
+    }
   }
 
   &__plan{
     margin-top: -136px;
+    @include lg-block{
+      margin-top: 0;
+    }
   }
 
   &__casting{

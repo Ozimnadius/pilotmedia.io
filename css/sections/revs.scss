@@ -115,3 +115,27 @@
 
 
 }
+
+.rev{
+  max-width: 625px;
+  width: 100vw;
+  padding: 25px 40px 40px 40px;
+
+  &__top{
+    grid-template-columns: 55px 1fr;
+    grid-gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__img{
+    width: 55px;
+    height: 55px;
+  }
+
+  &__name{
+    color: #444444;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+

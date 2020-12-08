@@ -17,6 +17,12 @@
     background: #FFE699;
   }
 
+  @include lg-block{
+    width: 250px;
+    height: 50px;
+    font-size: 12px;
+  }
+
 }
 
 .btn2{
@@ -36,6 +42,13 @@
   font-weight: 600;
   text-transform: uppercase;
   @include tr;
+
+  @include lg-block{
+    @include lg-block{
+      width: 212px;
+      font-size: 14px;
+    }
+  }
   
   &:hover{
     background: $btn;
@@ -119,4 +132,14 @@
     opacity: .7;
   }
 
+}
+
+.ovh{
+  overflow: hidden;
+}
+
+.disabled{
+  pointer-events: none;
+  opacity: .5;
+  filter: grayscale(1);
 }

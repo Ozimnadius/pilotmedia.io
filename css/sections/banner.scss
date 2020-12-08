@@ -4,6 +4,9 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
+  @include lg-block{
+    height: 430px;
+  }
 
   $layerSpeed: 15s;
   $man1Speed: 1.4s;
@@ -43,12 +46,19 @@
     left: 0;
     right: 0;
     padding-top: 160px;
+    @include lg-block{
+      padding-top: 100px;
+    }
   }
 
   &__imgs{
     position: absolute;
     right: -60px;
     bottom: 45px;
+    @include lg-block{
+      bottom: 0px;
+      right: 0px;
+    }
   }
 
   &__img1{
@@ -58,6 +68,13 @@
     left: 10px;
     right: -10px;
     transform: translateY(100%);
+
+    img{
+      display: block;
+      @include lg-block{
+        width: 380px;
+      }
+    }
 
 
 
@@ -73,6 +90,13 @@
     position: relative;
     z-index: 1;
     transform: translateY(100%);
+
+    img{
+      display: block;
+      @include lg-block{
+        width: 380px;
+      }
+    }
 
 
 
@@ -95,6 +119,10 @@
     margin-bottom: 25px;
     opacity: 0;
     transform: translateX(-20vw);
+    @include lg-block{
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
 
 
 
@@ -119,6 +147,10 @@
     margin-bottom: 25px;
     opacity: 0;
     transform: translateX(-20vw);
+    @include lg-block{
+      font-size: 16px;
+      max-width: 355px;
+    }
 
 
     &.animate{

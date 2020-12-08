@@ -4,6 +4,7 @@
   z-index: 2;
 
   $sliderSpeed: 15s;
+  $sliderSpeed-768: $sliderSpeed*2;
 
   &__container{
     max-width: 1484px;
@@ -22,6 +23,9 @@
 
     &.animate {
       animation: sliderScroll $sliderSpeed linear infinite;
+      @include lg-block{
+        animation: sliderScroll-768 $sliderSpeed-768 linear infinite;
+      }
     }
 
     &:hover{
@@ -36,14 +40,28 @@
     display: flex;
     justify-content: center;
 
+    @include lg-block{
+      width: 20%;
+    }
+
    img{
 
    }
+
   }
 
 }
 
 @keyframes sliderScroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-100%)}
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes sliderScroll-768 {
+  0% { transform: translateX(0); }
+  100% {
+    transform: translateX(-200%);
+  }
 }

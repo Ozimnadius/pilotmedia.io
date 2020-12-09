@@ -1,14 +1,23 @@
 .port {
   padding-bottom: 190px;
+  @include lg-block{
+    padding-bottom: 90px;
+  }
 
   &__top {
     margin-bottom: 65px;
+    @include lg-block{
+      margin-bottom: 50px;
+    }
   }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px 20px;
+    @include lg-block{
+        grid-gap: 30px 20px;
+    }
   }
 
   &__link {
@@ -17,6 +26,10 @@
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 25px;
+    @include lg-block{
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
 
     &:before {
       content: '';
@@ -48,6 +61,9 @@
     font-weight: 500;
     display: block;
     @include tr;
+    @include lg-block{
+      font-size: 16px;
+    }
 
     &:hover{
       color: #F2994A;

@@ -5,6 +5,7 @@
 
   $sliderSpeed: 15s;
   $sliderSpeed-768: $sliderSpeed*2;
+  $sliderSpeed-320: $sliderSpeed-768*1;
 
   &__container{
     max-width: 1484px;
@@ -20,11 +21,17 @@
     height: 136px;
     display: flex;
     align-items: center;
+    @include sm-block{
+      height: 120px;
+    }
 
     &.animate {
       animation: sliderScroll $sliderSpeed linear infinite;
       @include lg-block{
         animation: sliderScroll-768 $sliderSpeed-768 linear infinite;
+      }
+      @include sm-block{
+        animation: sliderScroll-320 $sliderSpeed-320 linear infinite;
       }
     }
 
@@ -42,6 +49,9 @@
 
     @include lg-block{
       width: 20%;
+    }
+    @include sm-block{
+      width: calc(100%/3);
     }
 
    img{
@@ -63,5 +73,12 @@
   0% { transform: translateX(0); }
   100% {
     transform: translateX(-200%);
+  }
+}
+
+@keyframes sliderScroll-320 {
+  0% { transform: translateX(0); }
+  100% {
+    transform: translateX(calc(-1000%/3));
   }
 }

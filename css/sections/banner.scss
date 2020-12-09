@@ -7,6 +7,10 @@
   @include lg-block{
     height: 430px;
   }
+  @include sm-block{
+    height: auto;
+    background: linear-gradient(133.88deg, #FF648D -18.28%, #8D227D 17.84%, #4A0F78 60.65%, #481CA2 87%, #461CBC 101.07%);
+  }
 
   $layerSpeed: 15s;
   $man1Speed: 1.4s;
@@ -20,9 +24,19 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    @include sm-block{
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      height: auto;
+    }
 
     &.animate{
       animation: scroll $layerSpeed linear infinite;
+      @include sm-block{
+          animation: none;
+      }
     }
   }
 
@@ -30,12 +44,28 @@
     min-width: 100%;
     width: 100%;
     height: 100%;
+    @include sm-block{
+      display: none;
+    }
 
     svg{
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
+
+    &_m{
+      display: none;
+      img {
+        width: 100%;
+      }
+
+      @include sm-block{
+        display: block;
+      }
+    }
+
   }
 
   &__container{
@@ -49,6 +79,11 @@
     @include lg-block{
       padding-top: 100px;
     }
+    @include sm-block{
+      display: flex;
+      flex-direction: column;
+      position: static;
+    }
   }
 
   &__imgs{
@@ -58,6 +93,10 @@
     @include lg-block{
       bottom: 0px;
       right: 0px;
+    }
+    @include sm-block{
+      position: relative;
+      order: 1;
     }
   }
 
@@ -106,6 +145,12 @@
       animation-timing-function: ease-out;
       animation-delay: 0.3s;
       animation-fill-mode: both;
+    }
+  }
+
+  &__content{
+    @include sm-block{
+      text-align: center;
     }
   }
 
@@ -165,7 +210,13 @@
   &__btn{
     opacity: 0;
     transform: translateX(-20vw);
-
+    @include sm-block{
+      position: absolute;
+      z-index: 30;
+      bottom: 30px;
+      left: 50%;
+      margin-left: -125px;
+    }
 
     &.animate{
       animation-name: content;

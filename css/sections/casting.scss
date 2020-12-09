@@ -2,10 +2,16 @@
   max-width: 1680px;
   margin: 0 auto;
   padding: 0 20px;
+  @include lg-block{
+    padding: 0;
+  }
 
   &__wrap{
     background: linear-gradient(95.94deg, #621287 0%, #2C124E 100%);
     border-radius: 30px;
+    @include lg-block{
+      border-radius: 0;
+    }
   }
 
   &__grid{
@@ -13,15 +19,25 @@
     grid-template-columns: repeat(2,1fr);
     grid-gap: 20px;
     align-items: center;
+    @include lg-block{
+        //grid-gap: 0;
+    }
   }
 
   &__left{
     padding-top: 40px;
     align-self: flex-end;
+    @include lg-block{
+      padding-top: 15px;
+    }
   }
 
   &__img{
     margin-left: -50px;
+    @include lg-block{
+      margin-left: 0;
+      margin-right: -20px;
+    }
     img{
       display: block;
     }
@@ -29,6 +45,9 @@
 
   &__right{
     padding: 85px 0;
+    @include lg-block{
+      padding: 40px 0;
+    }
   }
 
   &__title{
@@ -38,6 +57,9 @@
     line-height: 116.5%;
     margin-bottom: 20px;
     max-width: 540px;
+    @include lg-block{
+      font-size: 24px;
+    }
   }
 
   &__txt{
@@ -45,12 +67,20 @@
     font-size: 18px;
     margin-bottom: 35px;
     max-width: 447px;
+    @include lg-block{
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
   }
 
   &__btn{
     width: 281px;
     height: 54px;
-
+    @include lg-block{
+      width: 240px;
+      height: 47px;
+      font-size: 12px;
+    }
   }
 
 

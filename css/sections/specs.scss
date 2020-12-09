@@ -1,49 +1,69 @@
-.specs{
-  padding: 70px 0;
-  padding-top: 0;
+.specs {
+  padding-bottom: 70px;
   background-color: #f4f4f4;
+  @include lg-block{
+    padding-bottom: 60px;
+  }
 
-  &__container{
+  &__container {
     max-width: 1375px;
     padding: 0 20px;
     margin: 0 auto;
+    @include lg-block {
+      padding: 0;
+    }
   }
 
-  &__wrap{
+  &__wrap {
     border-radius: 30px;
     background-color: $bg;
     padding: 85px 100px;
+    @include lg-block {
+      border-radius: 0;
+      padding: 40px 20px;
+    }
   }
 
-  &__top{
+  &__top {
     margin-bottom: 75px;
+    @include lg-block{
+      margin-bottom: 55px;
+    }
   }
 
-  &__list{
+  &__list {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px 20px;
     margin-bottom: 70px;
+    @include lg-block{
+      grid-gap: 40px 20px;
+      margin-bottom: 50px;
+    }
   }
 
-  &__link{
+  &__link {
     margin: 0 auto;
   }
 }
 
-.spitem{
+.spitem {
   display: grid;
   grid-template-columns: 120px 1fr;
   grid-gap: 25px;
   align-items: center;
+  @include lg-block {
+    grid-template-columns: 75px 1fr;
+    grid-gap: 10px;
+  }
 
-  &__img{
+  &__img {
     background: linear-gradient(124.31deg, #B35DF0 14.12%, #B01C90 83.81%);
     border-radius: 50%;
     padding: 3px;
     position: relative;
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       background: $bg;
@@ -51,7 +71,7 @@
       border-radius: 50%;
     }
 
-    &-img{
+    &-img {
       position: absolute;
       top: 10px;
       bottom: 10px;
@@ -59,8 +79,14 @@
       right: 10px;
       border-radius: 50%;
       overflow: hidden;
+      @include lg-block {
+        top: 6px;
+        bottom: 6px;
+        left: 6px;
+        right: 6px;
+      }
 
-      img{
+      img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -69,46 +95,60 @@
     }
   }
 
-  &__name{
+  &__name {
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 7px;
+    @include lg-block{
+      font-size: 16px;
+    }
   }
 
-
-  &__price{
+  &__price {
     font-size: 20px;
     font-weight: 600;
+    @include lg-block{
+      font-size: 14px;
+    }
   }
 
 }
 
-.audio{
+.audio {
 
-  &__controls{
+  &__controls {
     display: flex;
     align-items: center;
   }
 
-  &__btn{
+  &__btn {
     margin-right: 10px;
   }
 
-  &__scale{
+  &__scale {
     position: relative;
     margin-right: 10px;
+
+    svg{
+      @include lg-block{
+        width: 144px;
+        height: 27px;
+      }
+    }
+
   }
 
-  &__progress{
+  &__progress {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
     overflow: hidden;
-   transition: .5s;
+    transition: .5s;
+
   }
 
-  &__btn{
+  &__btn {
 
     width: 28px;
     height: 28px;
@@ -116,28 +156,30 @@
     align-items: center;
     justify-content: center;
 
-    &-play{
+    &-play {
       display: none;
-      &.active{
+
+      &.active {
         display: block;
       }
     }
 
-    &-pause{
+    &-pause {
       display: none;
-      &.active{
+
+      &.active {
         display: block;
       }
     }
   }
 
-  &__time{
+  &__time {
     color: $black;
     font-size: 14px;
   }
 }
 
-.pspecs{
+.pspecs {
   max-width: 1335px;
   width: 100vw;
   height: 100vh;
@@ -145,19 +187,19 @@
   display: flex;
   flex-direction: column;
 
-  &__top{
+  &__top {
     border-bottom: 1px solid #C4C4C4;
     margin-left: 100px;
     margin-right: 160px;
     padding-bottom: 30px;
   }
 
-  &__title{
+  &__title {
     font-size: 40px;
     font-weight: 900;
   }
 
-  &__list{
+  &__list {
     flex-grow: 1;
     overflow-y: auto;
     overflow-x: hidden;
@@ -184,7 +226,7 @@
     }
   }
 
-  &__bottom{
+  &__bottom {
     padding-top: 30px;
     border-top: 1px solid #C4C4C4;
     margin-left: 100px;

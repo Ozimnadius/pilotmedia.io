@@ -79,6 +79,9 @@
     @include lg-block{
       margin-right: 50px;
     }
+    @include sm-block{
+      display: none;
+    }
 
     &:hover{
       color: $btn;
@@ -86,9 +89,7 @@
   }
 
   &__btn{
-    @include lg-block{
-      width: 212px;
-    }
+
   }
 }
 

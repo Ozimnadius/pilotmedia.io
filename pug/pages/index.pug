@@ -235,6 +235,9 @@ block content
                     </defs>
                     </svg>
 
+                .banner__layer.banner__layer_m
+                    +image('images/content/banner/img-m.svg')
+
             .container.banner__container
                 .banner__imgs
                     .banner__img1.jsAddAnimate
@@ -522,7 +525,7 @@ block content
                                             text(x=0 y=37).csubtitle__text.csubtitle__text_2 Курс
                                             text(x=5 y=40).csubtitle__text.csubtitle__text_1 Курс
 
-                                        svg(viewBox="0 0 473 107" width=473 height=107).course__title.ctitle
+                                        svg(viewBox="0 0 473 107" width=473 height=107).course__title.ctitle.ctitle_2
                                             <defs>
                                             <linearGradient id="gradient">
                                             <stop offset="0%" stop-color="#FA00FF"/>
@@ -1112,8 +1115,8 @@ block content
                 .revs__img
                     picture
                         source( media="(min-width: 992px)" type='image/jpeg' srcset="images/content/revs/bg.jpg")
-                        source(media="(min-width: 768px)" type='image/jpeg' srcset="images/content/revs/bg-m.jpg")
-                        source(media="(min-width: 320px)" type='image/jpeg' srcset="images/content/revs/bg-t.jpg")
+                        source(media="(min-width: 768px)" type='image/jpeg' srcset="images/content/revs/bg-t.jpg")
+                        source(media="(min-width: 320px)" type='image/jpeg' srcset="images/content/revs/bg-m.jpg")
                         img(src="images/content/revs/bg.jpg" alt="")
 
                 .container

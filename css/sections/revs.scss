@@ -5,6 +5,9 @@
     position: absolute;
     top: -65px;
     right: -50px;
+    @include lg-block{
+      right: -5px;
+    }
   }
 
   &__title{
@@ -12,16 +15,34 @@
     font-size: 46px;
     font-weight: 900;
     line-height: 114%;
+    @include lg-block{
+      font-size: 24px;
+    }
   }
 
   &__slider{
     margin-top: 45px;
+    @include lg-block{
+      margin-top: 20px;
+      padding: 0 10px;
+    }
+
+    .container{
+      @include lg-block{
+        padding: 0 10px;
+      }
+    }
   }
 
   &__container{
     width: 100%;
     margin-bottom: 50px;
     padding: 10px 0;
+    @include lg-block{
+      padding: 10px;
+      margin-bottom: 15px;
+
+    }
   }
 
   &__nav{
@@ -66,6 +87,7 @@
     grid-template-columns: 85px 1fr;
     grid-gap: 13px;
     align-items: center;
+    margin-bottom: 20px;
   }
 
   &__img{

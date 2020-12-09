@@ -10,14 +10,14 @@
   color: $textLight;
   font-weight: 700;
   text-transform: uppercase;
-  box-shadow: 0px 4px 4px 0px rgba(#000000,.25);
+  box-shadow: 0px 4px 4px 0px rgba(#000000, .25);
   @include tr;
 
-  &:hover{
+  &:hover {
     background: #FFE699;
   }
 
-  @include lg-block{
+  @include lg-block {
     width: 250px;
     height: 50px;
     font-size: 12px;
@@ -25,7 +25,7 @@
 
 }
 
-.btn2{
+.btn2 {
   width: 231px;
   height: 47px;
   box-shadow: 0 0 20px $btn;
@@ -43,20 +43,23 @@
   text-transform: uppercase;
   @include tr;
 
-  @include lg-block{
-    @include lg-block{
-      width: 212px;
-      font-size: 14px;
-    }
+  @include lg-block {
+    width: 212px;
+    font-size: 14px;
   }
-  
-  &:hover{
+  @include sm-block {
+    width: 167px;
+    height: 39px;
+    font-size: 12px;
+  }
+
+  &:hover {
     background: $btn;
     color: #333;
   }
 }
 
-.btn3{
+.btn3 {
   width: 231px;
   height: 47px;
   border-radius: 100px;
@@ -73,50 +76,57 @@
   text-transform: uppercase;
   @include tr;
 
-  &:hover{
+  &:hover {
     background: $btn;
     color: #333;
   }
 }
 
-.c{
-  &-purple{
+.c {
+  &-purple {
     color: #823ef4;
   }
-  &-yellow{
+
+  &-yellow {
     color: $btn;
   }
 }
 
-.top{
+.top {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
 
-  &__title{
+  &__title {
     font-size: 40px;
     font-weight: 900;
+    @include lg-block {
+      font-size: 24px;
+    }
   }
 
-  &__all{
+  &__all {
     color: #823ef4;
     font-size: 20px;
     font-weight: 500;
     @include tr;
+    @include lg-block {
+      font-size: 16px;
+    }
 
-    &:hover{
+    &:hover {
       color: #F2994A;
     }
   }
 }
 
-.socials{
+.socials {
   display: flex;
   align-items: center;
   margin: 0 -14px;
 }
 
-.social{
+.social {
   width: 49px;
   height: 49px;
   border-radius: 100%;
@@ -128,17 +138,17 @@
   justify-content: center;
   @include tr;
 
-  &:hover{
+  &:hover {
     opacity: .7;
   }
 
 }
 
-.ovh{
+.ovh {
   overflow: hidden;
 }
 
-.disabled{
+.disabled {
   pointer-events: none;
   opacity: .5;
   filter: grayscale(1);

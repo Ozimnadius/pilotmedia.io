@@ -1,77 +1,11 @@
 //index.js
-(function () {
-
-}());
-
 window.onload = function () {
 
     //Animation
     jsTools.addClass('.jsAddAnimate', 'animate');
 
-    const audioSettings = {
-        audio: '.audio__file',
-        play: '.audio__btn-play',
-        pause: '.audio__btn-pause',
-        time: '.audio__time',
-        scale: '.audio__scale',
-        progress: '.audio__progress'
-    };
-
-    //Audio
-    let allAudio = document.querySelectorAll('.audio');
-    for (let i = 0; i < allAudio.length; i++) {
-        new Player(allAudio[i], audioSettings);
-    }
-
     //Popup
-    // let jsOpenTemplates = document.querySelectorAll('.jsOpenTemplate');
-    // for (let i = 0; i < jsOpenTemplates.length; i++)  {
-    //     jsOpenTemplates[i].addEventListener('click', function (e) {
-    //         e.preventDefault();
-    //         let data = this.dataset;
-    //
-    //         let html = new Template(data).html();
-    //         popup.open(html);
-    //
-    //         if (data.validate) {
-    //             $(data.content).validate({
-    //                 onfocusout: false,
-    //                 submitHandler: function (form) {
-    //                     $(form).find('.form__error').removeClass('active');
-    //
-    //                     let data = $(form).serialize(),
-    //                         url = $(form).attr('action');
-    //
-    //                     $.ajax({
-    //                         dataType: "json",
-    //                         type: "POST",
-    //                         url: url,
-    //                         data: data,
-    //                         success: function (result) {
-    //                             if (result.status) {
-    //                                 $(form).append(new Template({
-    //                                     template: '.template',
-    //                                     content: '.success'
-    //                                 }).html());
-    //                             } else {
-    //                                 alert('Что-то пошло не так, попробуйте еще раз!!!');
-    //                             }
-    //                         },
-    //                         error: function (result) {
-    //                             alert('Что-то пошло не так, попробуйте еще раз!!!');
-    //                         }
-    //                     });
-    //
-    //
-    //                 },
-    //                 invalidHandler: function (event, validator) {
-    //                     $(this).find('.form__error').addClass('active');
-    //                 },
-    //             });
-    //             $('input[type=tel]').mask('+7 (999) 999-99-99');
-    //         }
-    //     });
-    // }
+    let popup = new Popup();
     document.addEventListener('click', function (e) {
         let target = e.target;
 
@@ -142,8 +76,32 @@ window.onload = function () {
                 });
             }
         }
+
     });
 
+    //Audio
+    const audioSettings = {
+        audio: '.audio__file',
+        play: '.audio__btn-play',
+        pause: '.audio__btn-pause',
+        time: '.audio__time',
+        scale: '.audio__scale',
+        progress: '.audio__progress'
+    };
+    let allAudio = document.querySelectorAll('.audio');
+    for (let i = 0; i < allAudio.length; i++) {
+        new Player(allAudio[i], audioSettings);
+    }
+
+    //Mmenu
+    const mmenuSettings = {
+        menu: '.mmenu',
+        open: '.jsMmenuOpen',
+        close: '.jsMmenuClose'
+    }
+    let mmenu = new Mmenu(mmenuSettings);
+
+    //Accept
     document.addEventListener('change', function (e) {
         let target = e.target;
 
@@ -179,16 +137,30 @@ window.onload = function () {
 
     var revsSwiper = new Swiper('.revs__container', {
         spaceBetween: 20,
-        slidesPerView: 4.7,
+        slidesPerView: 1,
         navigation: {
             nextEl: '.revs__next',
             prevEl: '.revs__prev',
             disabledClass: 'revs__arr_disabled'
         },
+        breakpoints: {
+            767.98: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+            },
+            991.98: {
+                spaceBetween: 20,
+                slidesPerView: 3,
+            },
+            1199.98: {
+                spaceBetween: 20,
+                slidesPerView: 4.7,
+            }
+        }
     });
 
     //Paralax
-    if (jsTools.getWindowWidth() > 750) {
+    if (jsTools.getWindowWidth() > 992) {
         let scene = document.querySelector('.footer__hands');
         if (scene) {
             let parallax = new Parallax(scene, {

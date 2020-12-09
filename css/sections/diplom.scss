@@ -2,11 +2,19 @@
 
   &__top{
     padding-top: 110px;
+    @include lg-block{
+      padding-top: 55px;
+      margin-bottom: 7vw;
+    }
+    @include md-block{
+      margin-bottom: 14vw;
+    }
+
   }
 
   &__bottom{
-    margin-top: -250px;
-    padding-top: 250px;
+    margin-top: -13vw;
+    padding-top: 13vw;
     padding-bottom: 70px;
     background-color: #f4f4f4;
   }
@@ -15,6 +23,7 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 20px;
+    align-items: flex-start;
   }
 
   &__left{
@@ -26,6 +35,10 @@
     font-size: 40px;
     font-weight: 900;
     line-height: 115%;
+
+    @include lg-block{
+      font-size: 24px;
+    }
   }
 
   &__mb{
@@ -36,17 +49,27 @@
     max-width: 400px;
     font-size: 28px;
     line-height: 120%;
+    @include lg-block{
+      font-size: 18px;
+    }
   }
 
   &__arr{
     position: absolute;
     right: 30px;
     bottom: -25px;
+    @include lg-block{
+      right: 10px;
+      bottom: -90px;
+    }
   }
 
   &__txt{
     font-size: 20px;
     font-weight: 500;
+    @include lg-block{
+      font-size: 18px;
+    }
   }
 
   &__img{

@@ -6,6 +6,10 @@
     padding-top: 50px;
     padding-bottom: 80px;
   }
+  @include sm-block {
+    padding-top: 35px;
+    padding-bottom: 60px;
+  }
 
   .container {
     position: relative;
@@ -37,6 +41,9 @@
       column-gap: 20px;
       margin-bottom: 10px;
     }
+    @include sm-block {
+      column-count: 1;
+    }
 
     p {
       font-size: 20px;
@@ -67,6 +74,10 @@
       grid-template-columns: repeat(2, 50%);
       grid-gap: 40px 0;
     }
+    @include sm-block {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
   }
 
   &__item {
@@ -84,8 +95,11 @@
         right: 0;
         height: 5px;
         background: url("/images/icons/plan_line.png") 0 0 repeat-x;
-        @include lg-block{
+        @include lg-block {
           right: 60px;
+        }
+        @include sm-block {
+          display: none;
         }
       }
     }
@@ -99,6 +113,9 @@
       flex-shrink: 0;
       display: inline-block;
       background-color: #f4f4f4;
+      @include sm-block {
+        font-size: 80px;
+      }
     }
 
     &-img {
@@ -115,9 +132,13 @@
     &-txt {
       padding-right: 20px;
       font-size: 18px;
-      @include lg-block{
+      @include lg-block {
         font-size: 16px;
         padding-right: 80px;
+      }
+      @include sm-block {
+        font-size: 14px;
+        padding-right: 0;
       }
     }
   }

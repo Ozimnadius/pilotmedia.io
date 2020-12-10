@@ -341,6 +341,9 @@
   padding: 50px 60px 60px 60px;
   overflow-y: auto;
   overflow-x: hidden;
+  @include sm-block{
+    padding: 40px 20px;
+  }
 
   &::-webkit-scrollbar {
     width: 7px;
@@ -362,11 +365,20 @@
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
+    @include sm-block{
+      font-size: 24px;
+    }
   }
 
   &__details {
     display: flex;
     margin-bottom: 30px;
+    @include sm-block{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+      margin-bottom: 10px;
+    }
   }
 
   &__detail {
@@ -385,11 +397,17 @@
     &-val {
       font-size: 18px;
       font-weight: 700;
+      @include sm-block{
+        font-size: 16px;
+      }
     }
   }
 
   &__chars {
     margin-bottom: 50px;
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__char {
@@ -399,6 +417,9 @@
       color: $text;
       font-size: 18px;
       font-weight: 700;
+      @include sm-block{
+        font-size: 16px;
+      }
     }
   }
 
@@ -406,6 +427,9 @@
     color: $black;
     font-size: 18px;
     margin-bottom: 45px;
+    @include sm-block{
+      font-size: 14px;
+    }
 
     li {
       padding-left: 28px;
@@ -419,6 +443,9 @@
       b {
         font-size: 20px;
         line-height: 200%;
+        @include sm-block{
+          font-size: 16px;
+        }
       }
 
       &:before {
@@ -437,6 +464,10 @@
 
   &__btn {
     margin: 0 auto;
+    @include sm-block{
+      width: 218px;
+      height: 44px;
+    }
   }
 
 

@@ -30,6 +30,9 @@
       right: -20px;
       left: -20px;
     }
+    @include sm-block{
+      display: none;
+    }
   }
 
   &__hand{
@@ -62,6 +65,10 @@
     margin-bottom: 35px;
     @include lg-block{
       font-size: 34px;
+    }
+    @include sm-block{
+      text-align: center;
+      font-size: 24px;
     }
   }
 
@@ -106,6 +113,13 @@
     align-items: center;
     justify-content: center;
     padding: 10px 0;
+    @include sm-block{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 14px;
+      justify-items: center;
+      padding: 25px 0;
+    }
   }
 
   &__copy{
@@ -120,6 +134,9 @@
     font-size: 16px;
     font-weight: 500;
     @include tr;
+    @include sm-block{
+        flex-direction: column;
+    }
 
     &:hover{
       color: $btn;
@@ -127,6 +144,10 @@
 
     img{
       margin-left: 5px;
+      @include sm-block{
+        margin-left: 0;
+        margin-top: 14px;
+      }
     }
   }
 

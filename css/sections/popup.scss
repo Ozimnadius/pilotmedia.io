@@ -20,6 +20,10 @@
     z-index: 20;
     top: 40px;
     right: 40px;
+    @include sm-block{
+      top: 30px;
+      right: 15px;
+    }
   }
 
 
@@ -35,6 +39,12 @@
 .form{
   max-width: 522px;
   padding: 80px 70px 55px 70px;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include sm-block{
+    padding: 55px 40px 45px 40px;
+  }
 
   &__title{
     font-size: 38px;
@@ -42,27 +52,43 @@
     margin-bottom: 15px;
     text-align: center;
     line-height: 110%;
+    @include sm-block{
+      font-size: 24px;
+    }
   }
 
   &__sub{
     font-size: 18px;
     margin-bottom: 8px;
     text-align: center;
+    @include sm-block{
+      font-size: 14px;
+    }
   }
 
   &__error{
+    text-align: center;
     font-size: 18px;
     color: #EB5757;
     display: none;
+    @include sm-block{
+      font-size: 14px;
+    }
+
+
     &.active{
       display: block;
     }
+
 
   }
 
   &__fields{
     margin-top: 25px;
     margin-bottom: 30px;
+    @include sm-block{
+      margin-bottom: 25px;
+    }
   }
 
   &__field{
@@ -74,12 +100,19 @@
 
   &__accept{
     margin-bottom: 45px;
+    @include sm-block{
+      margin-bottom: 25px;
+    }
   }
 
   &__submit{
     width: 230px;
     height: 60px;
     margin: 0 auto;
+    @include sm-block{
+      width: 143px;
+      height: 41px;
+    }
   }
 
   &__success{
@@ -105,6 +138,9 @@
   width: 100%;
   padding: 10px 20px;
   font-size: 18px;
+  @include sm-block{
+    font-size: 14px;
+  }
 
   &.error{
     border-color: #EB5757;
@@ -143,6 +179,9 @@ label.error{
     display: flex;
     align-items: center;
     justify-content: center;
+    @include sm-block{
+
+    }
 
     svg{
       width: 100%;
@@ -153,6 +192,9 @@ label.error{
   &__txt{
     font-size: 14px;
     color: #112E49;
+    @include sm-block{
+      font-size: 10px;
+    }
 
   }
 }
@@ -160,6 +202,9 @@ label.error{
 .success{
   padding: 70px;
   text-align: center;
+  @include sm-block{
+    padding: 60px 40px;
+  }
 
   &__svg{
     margin-bottom: 30px;

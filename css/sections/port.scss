@@ -1,13 +1,19 @@
 .port {
   padding-bottom: 190px;
-  @include lg-block{
+  @include lg-block {
     padding-bottom: 90px;
+  }
+  @include sm-block{
+    padding-bottom: 70px;
   }
 
   &__top {
     margin-bottom: 65px;
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 50px;
+    }
+    @include sm-block{
+      margin-bottom: 35px;
     }
   }
 
@@ -15,8 +21,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px 20px;
-    @include lg-block{
-        grid-gap: 30px 20px;
+    @include lg-block {
+      grid-gap: 30px 20px;
+    }
+    @include sm-block {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -26,7 +35,7 @@
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 25px;
-    @include lg-block{
+    @include lg-block {
       border-radius: 4px;
       margin-bottom: 15px;
     }
@@ -47,28 +56,36 @@
       @include tr;
     }
 
-    &:hover{
-      img{
+    &:hover {
+      img {
         transform: scale(1.1);
       }
     }
 
   }
 
-  &__txt{
+  &__txt {
     color: $black;
     font-size: 20px;
     font-weight: 500;
     display: block;
     @include tr;
-    @include lg-block{
+    @include lg-block {
       font-size: 16px;
     }
 
-    &:hover{
+    &:hover {
       color: #F2994A;
     }
   }
 
+  &__all {
+    display: none;
+    text-align: center;
+    margin-top: 35px;
+    @include sm-block {
+      display: block;
+    }
+  }
 
 }

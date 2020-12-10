@@ -1,55 +1,68 @@
-.revs{
+.revs {
   position: relative;
 
-  &__img{
+  &__img {
     position: absolute;
+    z-index: -1;
     top: -65px;
     right: -50px;
-    @include lg-block{
+    @include lg-block {
       right: -5px;
+    }
+    @include sm-block {
+      top: -95px;
+      right: 0;
     }
   }
 
-  &__title{
+  &__title {
     max-width: 381px;
     font-size: 46px;
     font-weight: 900;
     line-height: 114%;
-    @include lg-block{
+    @include lg-block {
       font-size: 24px;
     }
   }
 
-  &__slider{
+  &__slider {
     margin-top: 45px;
-    @include lg-block{
+    @include lg-block {
       margin-top: 20px;
       padding: 0 10px;
     }
+    @include sm-block {
+      padding: 0;
+    }
 
-    .container{
-      @include lg-block{
+    .container {
+      @include lg-block {
         padding: 0 10px;
       }
     }
   }
 
-  &__container{
+  &__container {
     width: 100%;
     margin-bottom: 50px;
     padding: 10px 0;
-    @include lg-block{
+    @include lg-block {
       padding: 10px;
       margin-bottom: 15px;
-
+    }
+    @include sm-block {
+      margin-bottom: 25px;
     }
   }
 
-  &__nav{
+  &__nav {
     display: flex;
+    @include sm-block {
+      justify-content: center;
+    }
   }
 
-  &__arr{
+  &__arr {
     width: 56px;
     height: 56px;
     border-radius: 4px;
@@ -60,18 +73,18 @@
     margin-right: 10px;
     @include tr;
 
-    &:last-child{
+    &:last-child {
       margin-right: 0;
     }
 
-    &_disabled{
+    &_disabled {
       background-color: #e0e0e0;
       pointer-events: none;
     }
   }
 }
 
-.rslide{
+.rslide {
   box-sizing: border-box;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -81,8 +94,11 @@
   flex-direction: column;
   align-items: flex-start;
   height: auto;
+  @include sm-block {
+    padding: 30px 25px;
+  }
 
-  &__top{
+  &__top {
     display: grid;
     grid-template-columns: 85px 1fr;
     grid-gap: 13px;
@@ -90,13 +106,14 @@
     margin-bottom: 20px;
   }
 
-  &__img{
+  &__img {
     width: 85px;
     height: 85px;
     border-radius: 50%;
     border: 5px solid $btn;
     overflow: hidden;
-    img{
+
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -105,32 +122,35 @@
 
   }
 
-  &__name{
+  &__name {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
   }
 
-  &__content{
+  &__content {
     color: #333333;
     font-size: 14px;
     margin-bottom: 25px;
     flex-grow: 1;
-    p{
+
+    p {
       margin-bottom: 15px;
-      &:last-child{
+
+      &:last-child {
         margin: 0;
       }
     }
   }
 
-  &__btn{
+  &__btn {
     color: #621598;
     font-size: 16px;
     font-weight: 600;
     text-decoration: underline;
     @include tr;
-    &:hover{
+
+    &:hover {
       color: #F2994A;
     }
   }
@@ -138,26 +158,47 @@
 
 }
 
-.rev{
+.rev {
   max-width: 625px;
   width: 100vw;
   padding: 25px 40px 40px 40px;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
-  &__top{
+  @include sm-block{
+    padding: 40px 10px;
+  }
+
+  &__top {
     grid-template-columns: 55px 1fr;
     grid-gap: 15px;
     margin-bottom: 20px;
+    @include sm-block {
+      grid-gap: 10px;
+      border-bottom: 1px solid #c4c4c4;
+      padding-bottom: 15px;
+      margin-bottom: 0;
+    }
   }
 
-  &__img{
+  &__content{
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  &__img {
     width: 55px;
     height: 55px;
   }
 
-  &__name{
+  &__name {
     color: #444444;
     font-size: 18px;
     font-weight: 600;
   }
+
 }
 

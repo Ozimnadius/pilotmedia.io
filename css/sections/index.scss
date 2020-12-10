@@ -17,5 +17,8 @@
 
   &__casting{
     margin-bottom: 130px;
+    @include sm-block{
+      margin-bottom: 160px;
+    }
   }
 }

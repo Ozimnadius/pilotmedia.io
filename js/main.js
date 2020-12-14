@@ -4,3 +4,5 @@
 // @prepros-append pages/template.js
 // @prepros-append pages/mmenu.js
 // @prepros-append pages/index.js
+
+//TODO переписать классы с использование прототипов

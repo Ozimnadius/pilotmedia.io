@@ -1,4 +1,4 @@
-function Player(parent, settings) {
+/*function Player(parent, settings) {
     let player = this;
     this.audio = parent.querySelector(settings.audio);
     this.playBtn = parent.querySelector(settings.play);
@@ -118,4 +118,86 @@ Player.prototype = {
             this.pauseBtn.classList.remove('active');
         }
     }
+}*/
+
+class Player {
+    constructor(parent, settings) {
+        let player = this;
+        this.audio = parent.querySelector(settings.audio);
+        this.playBtn = parent.querySelector(settings.play);
+        this.pauseBtn = parent.querySelector(settings.pause);
+        this.timeLeft = parent.querySelector(settings.time);
+        this.scale = parent.querySelector(settings.scale);
+        this.progress = parent.querySelector(settings.progress);
+        this.currentTime = this.audio.currentTime;
+        this.total = this.audio.duration || 0;
+
+
+        this.audio.addEventListener('timeupdate', function () {
+            player.update();
+        });
+
+        this.playBtn.addEventListener('click', function () {
+            player.play();
+        });
+
+        this.pauseBtn.addEventListener('click', function () {
+            player.pause()
+        });
+
+        this.scale.addEventListener('click', function (e) {
+            player.audio.currentTime = player.total * (e.layerX / this.offsetWidth);
+        });
+
+        this.setTimeLeft();
+
+
+    }
+
+    play() {
+        this.audio.play();
+        this.togglePlay();
+    }
+
+    pause() {
+        this.audio.pause();
+        this.togglePlay();
+    }
+
+    setTimeLeft() {
+        this.timeLeft.innerHTML = this.formatTime(this.total - this.currentTime);
+    }
+
+    setProgress() {
+        let percent = Math.floor(this.currentTime / this.total * 100);
+        this.progress.style.width = percent + '%';
+    }
+
+    update() {
+        this.total = this.audio.duration;
+        this.currentTime = this.audio.currentTime;
+        this.setTimeLeft();
+        this.setProgress();
+    }
+
+    formatTime(timestamp) {
+        timestamp = Math.floor(timestamp);
+        let minutes = Math.floor(timestamp / 60),
+            seconds = timestamp % 60;
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+        return '-' + minutes + ':' + seconds;
+    }
+
+    togglePlay() {
+        if (this.playBtn.classList.contains('active')) {
+            this.playBtn.classList.remove('active');
+            this.pauseBtn.classList.add('active');
+        } else {
+            this.playBtn.classList.add('active');
+            this.pauseBtn.classList.remove('active');
+        }
+    }
+
 }

@@ -609,6 +609,39 @@ block content
 
 
                                     button(type='button' data-template='.template' data-content='.signup' data-validate='true').btn.pcourse__btn.jsOpenTemplate Записаться на кастинг
+        //- cost
+        section.index__cost
+            .cost
+                .container
+                    h2.cost__title А сколько стоит?!
+                    .cost__table
+                        .cost__head
+                            .cost__row
+                                .cost__col.cost__col--name
+                                    .cost__heading Название курса:
+                                .cost__col.cost__col--duration
+                                    .cost__heading Длительность курса:
+                                .cost__col.cost__col--old
+                                    .cost__heading Старая цена:
+                                .cost__col.cost__col--new
+                                    .cost__heading Новая цена:
+                                .cost__col.cost__col--btn
+                        .cost__body
+                            each i in costTable
+                                .cost__row
+                                    .cost__col.cost__col--name
+                                        .cost__name= i.name
+                                        .cost__desc= i.desc
+                                    .cost__col.cost__col--duration
+                                        .cost__dur 2 месяца (Краткий - База)
+                                        .cost__lessons Длительность занятий: 1.5 - 2 часа.
+                                    .cost__col.cost__col--old
+                                        .cost__oldprice 21 000 ₽
+                                    .cost__col.cost__col--new
+                                        .cost__price 21 000 ₽
+                                    .cost__col.cost__col--btn
+                                        button(type='button' data-template='.template' data-content='.signup ' data-validate='true').cost__btn.jsOpenTemplate Записаться
+
         //- diplom
         section.index__diplom
             .diplom
